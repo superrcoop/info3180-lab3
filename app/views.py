@@ -8,6 +8,7 @@ This file creates your application.
 from app import app
 from controllers import get_time
 from flask import render_template, request, redirect, url_for, flash
+from forms import ContactForm
 
 
 ###
@@ -20,9 +21,15 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/contact')
+@app.route('/contact',methods=['GET', 'POST'])
 def contact():
-    return render_template('contact.html')
+    form = ContactForm(request.form)
+    if request.method == 'POST' and form.validate():
+        user = User(form.name.data, form.email.data,
+                    form.subject.data,form.message.data)
+        flash('Thanks for registering')
+        return redirect(url_for('login'))
+    return render_template('contact.html',form=form)
 
 ###
 # The functions below should be applicable to all Flask apps.
