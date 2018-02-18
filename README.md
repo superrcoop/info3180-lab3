@@ -26,7 +26,9 @@ Go into the repository:
 Create a virtual environment and Install app dependencies:
 
 `$ virtualenv venv`
+
 `$ source venv/bin/activate`
+
 `$ pip install -r requirements.txt`
 
 To allow Flask-Mail to work you'll need to configure your SMTP in `__init__.py`:
