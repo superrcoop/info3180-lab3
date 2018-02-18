@@ -25,10 +25,8 @@ def home():
 def contact():
     form = ContactForm(request.form)
     if request.method == 'POST' and form.validate():
-        user = User(form.name.data, form.email.data,
-                    form.subject.data,form.message.data)
-        flash('Thanks for registering')
-        return redirect(url_for('login'))
+        flash('Thanks for contacting')
+        return redirect(url_for('home')) 
     return render_template('contact.html',form=form)
 
 ###
