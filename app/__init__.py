@@ -5,8 +5,10 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'passphrase' 
 app.config['MAIL_SERVER'] = 'smtp.mailtrap.io' 
 app.config['MAIL_PORT'] = '465' 
-app.config['MAIL_USERNAME'] = '82b624680044e3' 
-app.config['MAIL_PASSWORD'] = 'd34e5796da9010' 
+# Add your mailtrap username here
+app.config['MAIL_USERNAME'] = '' 
+# Add your mailtrap password here
+app.config['MAIL_PASSWORD'] = '' 
  
 mail = Mail(app) 
 
