@@ -1,28 +1,21 @@
 {% extends "base.html" %}
 
-{% block title %}Page Not Found{% endblock %}
+{% block title %}ERROR{% endblock %}
 
 {% block css %}
 <style type="text/css">
-  body{
-    padding-top: 40px;
-  }
-  h1, p{
-    text-align:center;
-  }
-  h1{
-    font-size:64px;
-    margin:75px 0 50px;
-  }
-  p{
-    font-size:24px;
-    margin:15px 0;
-  }
+  body { padding-top: 70px; }
 </style>
 {% endblock %}
 
 {% block main %}
-<h1>404</h1>
-<p>That page doesn't even exist.</p>
-<p>Why don't you just <a href="{{ url_for('home') }}">go back home</a>?</p>
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="text-center"><i class="fa fa-5x fa-frown-o" style="color:#d9534f;"></i></div>
+        <h1 class="text-center">404 Not Found<p> </p><p><small class="text-center"> Oh noes everything broke</small></p></h1>
+        <p class="text-center">Try pressing the back button or clicking on this button.</p>
+        <p class="text-center"><a class="btn btn-primary" href="#"><i class="fa fa-home"></i> Take Me Home</a></p>
+    </div>
+</div>
 {% endblock %}
